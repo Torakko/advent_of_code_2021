@@ -8,6 +8,7 @@ import (
   "strconv"
   "net/http"
   "io/ioutil"
+  "math"
 );
 
 const url_format string = "https://adventofcode.com/%d/day/%d/input";
@@ -92,4 +93,14 @@ func StrToFloat_array(strs []string) ([]float64, error) {
         floats[i] = f;
     }
     return floats, nil;
+}
+
+func StrByteToInt(input string) int {
+    var res = 0
+    for pos := 0; pos < len(input); pos++ {
+        if (input[len(input)-pos-1] == '1') {
+            res += int(math.Pow(2,float64(pos)))
+        }
+    }
+    return res
 }
