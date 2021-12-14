@@ -109,3 +109,11 @@ func RemoveFromSlice(s []int, i int) []int {
     s[i] = s[len(s)-1]
     return s[:len(s)-1]
 }
+
+func PrintMatrix(matrix [][]int) {
+    for _, line := range matrix {
+        fmt.Printf("%v\n", line)
+    }
+}
+
+
