@@ -4,6 +4,7 @@ import (
   "fmt"
   "os"
   "errors"
+  "sort"
   "strings"
   "strconv"
   "net/http"
@@ -114,6 +115,26 @@ func PrintMatrix(matrix [][]int) {
     for _, line := range matrix {
         fmt.Printf("%v\n", line)
     }
+}
+
+func Pow(a int, exp int) int {
+    return int(math.Pow(float64(a), float64(exp)))
+}
+
+func StringToRuneSlice(s string) []rune {
+    var r []rune
+    for _, runeValue := range s {
+        r = append(r, runeValue)
+    }
+    return r
+}
+
+func SortStringByCharacter(s string) string {
+    r := StringToRuneSlice(s)
+    sort.Slice(r, func(i, j int) bool {
+        return r[i] < r[j]
+    })
+    return string(r)
 }
 
 func Max(a int, b int) int {
