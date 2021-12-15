@@ -169,3 +169,10 @@ func Abs(a int) int {
     }
 }
 
+func SumArray(a []int) int {
+    var res = 0
+    for _, val := range(a) {
+        res += val
+    }
+    return res
+}
