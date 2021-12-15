@@ -116,4 +116,35 @@ func PrintMatrix(matrix [][]int) {
     }
 }
 
+func Max(a int, b int) int {
+    if a > b {
+        return a
+    } else {
+        return b
+    }
+}
+
+func Min(a int, b int) int {
+    if a < b {
+        return a
+    } else {
+        return b
+    }
+}
+
+func MinArray(a []int) int {
+    var res = math.MaxInt32
+    for _, x := range(a) {
+        res = Min(res, x)
+    }
+    return res
+}
+
+func Abs(a int) int {
+    if a > 0 {
+        return a
+    } else {
+        return -a
+    }
+}
 
